@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <title>Bookshelf</title>
+</head>
+<body class="bg-secondary">
+    <nav class="navbar navbar-light bg-primary shadow-lg mx-1 my-1">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="image/icon.png" alt=""height="30" class="d-inline-block align-text-top">
+                <span class="fw-bold text-light">BOOKSHELF</span>
+            </a>
+        </div>
+    </nav>
+    <div class="card mx-1 d-md-none">
+        <div class="row">
+            <div class="col">
+                <input class="card border-dark" type="text" id="search" placeholder="Cari Buku" />
+            </div>
+            <div class="col">
+                <div class="float-end">
+                    <button id="tambahBuku" class="btn btn-sm btn-success">Tambah Buku</button>
+                    <button id="hapusSemua" class="btn btn-sm btn-danger">Hapus Semua</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 my-1">
+        <div class="p-0 mx-1 d-none d-md-block" style="width: 250px;">
+            <div class="card overlow-auto" style="height: 89vh">
+                <div class="card-body">
+                    <div class="card bg-primary text-light fw-bold text-center">
+                        <img src="image/icon.png" alt=""height="" class="d-inline-block align-text-top">
+                        <h4>BOOKSHELF</h4>
+                    </div>
+                    <div class="card  bg-primary text-light fw-bold mt-1">
+                        <div class="card-body">
+                            AKSI :
+                            <input class="card border-dark" type="text" id="search1" placeholder="Cari Buku" />
+                            <div class="row mt-1">
+                                <div class="col-5">
+                                    <button id="tambahBuku2" class="btn btn-sm btn-success">Tambah Buku</button>
+                                </div>
+                                <div class="col-7">
+                                    <button id="hapusSemua2" class="btn btn-sm btn-danger">Hapus Semua</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card  bg-primary text-light fw-bold mt-1">
+                        <div class="card-body">
+                            TOTAL BUKU :
+                            <h3 id="totalBuku"></h3>
+                        </div>
+                    </div>
+                    <div class="card  bg-primary text-light fw-bold mt-1">
+                        <div class="card-body">
+                            KONTAK :
+                        </div>
+                        <div class="card-body pt-0 mx-1">
+                            <div class="btn btn-light mt-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                                <a class="far fa-envelope text-danger text-decoration-none" href="mailto:m.syahrul.ibrahim1@gmail.com"> <span class="font-monospace fw-bold">GMAIL</span> </a>
+                            </div>
+                            <div class="btn btn-light mt-1  outline-none">
+                                <a href="https://wa.link/qrwo03" class="fab fa-whatsapp text-success text-decoration-none"> <span class="font-monospace fw-bold">WA</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col p-0 mx-1">
+            <div class="card" style="height: 89vh;">
+                <div class="card-body overflow-auto">
+                    <div class="row font-monospace ">
+                        <div class="col">
+                            <div class="card border-dark">
+                                <div class="card-header bg-primary fw-bold text-light text-center">
+                                    Buku yang belum dibaca
+                                </div>
+                                <div class="card-body">
+                                    <div class="row content" id="unCompletedBook">
+                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-dark">
+                                <div class="card-header bg-primary fw-bold text-light text-center">
+                                    Buku yang sudah dibaca
+                                </div>
+                                <div class="card-body">
+                                    <div class="row content" id="completedBook">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="position-absolute top-50 start-50 translate-middle d-flex d-none" style="width: 100%; height: 100%; background-color: rgb(0,0,0,0.75);" id="modal">
+        <div class="card mx-auto my-auto"style="height: fit-content; width: 500px;" id="modal-content">
+            <div class="card-header bg-primary fw-bold text-light">
+                Tambah Buku <button class="float-end border-0" id="modal-close">&#10006;</button>
+            </div>
+            <div class="card-body">
+                <form class="form" action="#" id="form">
+                    <div class="mb-3 row">
+                        <label for="" class="col-sm-2 col-form-label">Judul</label>
+                        <div class="col-sm-10">
+                            <input id="title" type="text" class="form-control" id="" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="" class="col-sm-2 col-form-label">Penulis</label>
+                        <div class="col-sm-10">
+                            <input id="author" type="text" class="form-control" id="" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="" class="col-sm-2 col-form-label">Tahun</label>
+                        <div class="col-sm-10">
+                            <input id="year" type="date" class="form-control" id="" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="" class="col-sm-2 col-form-label">Sudah Dibaca</label>
+                        <div class="col-sm-9">
+                            <input type="checkbox" id="isCompleted" style="width: 30px; height:30px;">
+                        </div>
+                    </div>
+                    <div class="card">
+                        <input type="submit" value="Submit" name="Submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+    <script src="js/script.js"></script>
+</html>
